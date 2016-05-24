@@ -1,6 +1,11 @@
 var express = require('express');
 var app = express();
 
+app.all('/secret', function(req, res, next){
+  console.log('You found the secret area...');
+  next();
+});
+
 app.get('/', function(req, res) {
   res.send('Hello World!');
 });
